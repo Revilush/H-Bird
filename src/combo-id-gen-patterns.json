@@ -1,0 +1,384 @@
+{
+	"supp wo consent succ gty": {
+		"ngram-list": [
+			"sucession |sucessor",
+			"guarant",
+			"merger |consolida |reorganiza",
+			"obligat",
+			"(?i)subsidiar",
+			"evidenc",
+			"assumpt",
+			"(?i)partners |corpora |issu |company |co-issu |parent |Person",
+			"(?i)conform",
+			"verbatim",
+			"inconsist |conflict",
+			"(?i)offering |prospectu |placement"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"supp wo consent ambiguity": {
+		"ngram-list": [
+			"ambiguity,?",
+			"defective,?",
+			"defect,?",
+			"error,?",
+			"omission,?",
+			"correct,?",
+			"inconsistency,?",
+			"cure,?"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"indemnity or security satisfactory": {
+		"ngram-list": [
+			"securi indemn |indemn secur",
+			"prefund |advanc",
+			"offer |provid\\sto\\sthe |furnish",
+			"(any|no).{1,3}oblig",
+			"request direct |directi request |request |direct |instruct",
+			"sole\\s",
+			"negligen",
+			"agent |counsel",
+			"proof",
+			"in\\seach\\scase"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"indemnity": {
+		"ngram-list": [
+			"(attorneys'? |attorney |counsel |counsel\\) |legal\\fee)",
+			"connect |accept |administr",
+			"(any |other |agent )capacit",
+			"other ([tT]{1}ransacti |document)",
+			"negligen",
+			"willful",
+			"director |office |employ |agent",
+			"connect |accept |administr"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"no knowledge EoD": {
+		"ngram-list": [
+			"Default,? |Termination,? |Acceleration,? |Amortization,?",
+			"not (deem |charg)",
+			"payment |[Ii]{1}nterest",
+			"writing |written",
+			"[Oo]{1}fficer",
+			"inquire |investigate"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"not liable believes authorized or within rights powers": {
+		"ngram-list": [
+			"not (personal )?liabl |[nN]either.{1,80} liabl |not respons",
+			"conferred |authoriz",
+			"powers |rights",
+			"suffer |omit\\s |"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"not liable reliance on Officer Certificate or Opinion or BoardRes": {
+		"ngram-list": [
+			"liabl |responsi",
+			"good faith |bad faith",
+			"specifica |express",
+			"rely |reliance",
+			"(?i)acceptable (company |issuer)",
+			"Officer",
+			"Opinion",
+			"Board",
+			"accordan"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"advice of counsel no liability": {
+		"ngram-list": [
+			"attorney |counsel |advice |opinion |Opinion",
+			"from liab |not liabl |without liab",
+			"authorization | protectio",
+			"full complet",
+			"good |bad",
+			"rely |reliance |accordan"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"compensation and reimbursement": {
+		"ngram-list": [
+			"negligent,? |negligence,?",
+			"willful",
+			"express trust",
+			"compensat |reimbursement ",
+			"expens",
+			"claim",
+			"reimburs",
+			"writing"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"standard of care": {
+		"ngram-list": [
+			"negligen",
+			"misconduct ",
+			"liabl |liabilit ",
+			"constru ",
+			"reliev "
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"right to rely statements": {
+		"ngram-list": [
+			"liab |liabil |liable, |liability, ",
+			"rely |rely,",
+			"good faith",
+			"negligent,? |negligence,? |negligence |negligent",
+			"misconduct",
+			"truth,? |correctness,? |truth |correctness",
+			"conform |conforming",
+			"investigation |investigate |verify",
+			"(specifically |expressly )required |required (specifically |expressly)",
+			"furnish |provided\\sto Trustee"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"not required to risk or expend own funds": {
+		"ngram-list": [
+			"financial",
+			"liabilit |liab",
+			"indemni",
+			"securi",
+			"risk expend |expend risk |risk fund |risk\\sany liab",
+			"repayment",
+			"satisfact"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"not liable for interest on money held": {
+		"ngram-list": [
+			"received |held",
+			"in\\s[tT]{1}rust",
+			"(?sm)liabl |liabil |responsi",
+			"non.{1,3}interest |not invest |uninvest |interest on\\s |any interest |obligation invest |earnings",
+			"(?i)mone[iesy]{1,4} |cash |funds? |[Mm]onies |[Mm]oneys? |[Aa]ssets",
+			"(writte |writing)",
+			"unless .{1,18} agreed |([Ss]ubject to |[Ee]xcept as provided )|except .{1,10} relat[ioned]{2,3}direct[edion]{2,3} |instruct[ioned]{2,3}",
+			"segregat"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"money need not be segregated": {
+		"ngram-list": [
+			"no liab |uninveste |un-investe",
+			"interest",
+			"liab",
+			"not .{1,6} segregated",
+			"in trust",
+			"[Mm]onies |[Mm]oneys? |cash |funds?",
+			"[Pp]roperty |[Aa]ssets",
+			"(?sm)(prescribed |required ).{1,5} law",
+			"agree writ |unless .{1,18} agree |([Ss]ubject to|[Ee]xcept as provided )|except .{1,10} relat |(direction |instruction) .{1,30} by |writt instrut"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"no implied duties": {
+		"ngram-list": [
+			"specific |expres",
+			"perform",
+			"duties |duty",
+			"implied",
+			"against",
+			"covenant |obligation"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"error judgment good faith": {
+		"ngram-list": [
+			"error",
+			"good faith",
+			"liabl |liabil |responsib |answerab |fully protected |protected",
+			"action taken |suffered |omission |omitted",
+			"ascertain |ascertaining",
+			"court",
+			"negligence |negligent",
+			"(wil?lful |material )(default |breach |misfeasance |malfeasance |misconduct )|fraud |bad faith |breach trust",
+			"[Oo]{1}fficer |Responsible Person"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"may require officer certificate or opinion of counsel": {
+		"ngram-list": [
+			"[Ww]{1}henever[,\\(\\.]{0,2} |[Bb]{1}efore",
+			"(request|require)[,\\(\\.]{0,2}",
+			"Officer'?s?'?[,\\(\\.]{0,2}",
+			"Opinion[,\\(\\.]{0,2}",
+			"conclusively rely[,\\(\\.]{0,2}",
+			"consult[,\\(\\.]{0,2}",
+			"unless[,\\(\\.]{0,2} |other than[,\\(\\.]{0,2} |except[,\\(\\.]{0,2}",
+			"full\\s |complete |authorization ",
+			"liab |liabili |protect",
+			"express |specifical"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"prudent person": {
+		"ngram-list": [
+			"Prudent |prudent",
+			"occcured |continuing |continuation |exists |exist |not.{1,15}waived |not.{1,15}cured |occcured, |continuing, |continuation, |exists, |exist, |not.{1,15}waived, |not.{1,15}cured,",
+			"rights |powers |vested"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"not liable if directed by holders": {
+		"ngram-list": [
+			"liabl| liabil |responsi",
+			"good faith",
+			"[A-Z]{1}[a-z]+holders? |Holders? |holders?",
+			"lesser |at least |not\\sless |percent |Required |majority |[Cc]{1}ontrol[ing]{0,3} |requis |pursuant to |as provided in Section | accordance with Section",
+			"[A-Z]{1}[a-z]+holders? |Holders? |holders?",
+			"time method",
+			"received by |direction of |direction received"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"act through agents": {
+		"ngram-list": [
+			"willful",
+			"negligen",
+			"appoint |select |retain",
+			"good faith,?",
+			"attorney,? |agent,?",
+			"liabilit |liabl |responsi"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"notice not to pay": {
+		"ngram-list": [
+			"payment |principal |interest",
+			"writing |written",
+			"prior",
+			"Business Day",
+			"(shall\\s|will\\s) not\\s"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"annual opinion if collateral": {
+		"ngram-list": [
+			"opinion",
+			"writing |written",
+			"prior",
+			"Business Day",
+			"(shall\\s|will\\s) not\\s"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"every provision subject to rights of trustee": {
+		"ngram-list": [
+			"every",
+			"express",
+			"except",
+			"condition",
+			"conduct",
+			"liabil |liabl",
+			"provision",
+			"protection",
+			"subject",
+			"(?i)whether |regardless",
+			"protection"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"request sufficient if company order bd res": {
+		"ngram-list": [
+			"Request |Order",
+			"request |direction",
+			"Board",
+			"resolution",
+			"sufficient",
+			"evidence"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"rely believe genuine": {
+		"ngram-list": [
+			"believe",
+			"rely",
+			"present",
+			"signed",
+			"proper"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"notice of default": {
+		"ngram-list": [
+			"default",
+			"(Trust |Responsible) Office",
+			"actual",
+			"actual",
+			"knowledg |know ",
+			"(30 |45 |60 |90 )days",
+			"principal |interest"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"def business day": {
+		"ngram-list": [
+			"business",
+			"day",
+			"open |close"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"def corporate trust office": {
+		"ngram-list": [
+			"corporate",
+			"Trustee",
+			"located",
+			"notice",
+			"located",
+			"office"
+		],
+		"careful-list": [],
+		"comments": ""
+	},
+	"no liable financing statement": {
+		"ngram-list": [
+			"(?i)financing statement,?",
+			"(?i)security interest,?",
+			"(?i)perfection,?",
+			"(?i)validty,?",
+			"(?i)priority,?",
+			"(?i)lien,?",
+			"(?i)priority,?",
+			"(?i)filing,?",
+			"(?i)continuation statement,?"
+		],
+		"careful-list": [],
+		"comments": ""
+	}
+}

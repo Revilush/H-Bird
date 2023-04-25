@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration >
+
+	<Properties>
+		<Property name="logdir">/home/legal_search_logs</Property>
+		<Property name="file_logs_pattern">%d{DATE} [%-5p] [%C{1.}.%M() %X] [%t] %m%n</Property>
+	</Properties>
+	
+	<Appenders>
+
+		<RollingFile name="application_log" fileName="${logdir}/legal_search_app.logs" filePattern="${logdir}/legal_search_app-%d{yyyy_MM_dd}.logs">
+			<PatternLayout pattern="${file_logs_pattern}"/>
+			<Policies>
+		        <!-- <OnStartupTriggeringPolicy /> -->
+		        <SizeBasedTriggeringPolicy size="15 MB" />
+		        <TimeBasedTriggeringPolicy />
+		    </Policies>
+			<!-- 
+			<Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true" />
+            </Policies>
+            -->
+            <DefaultRolloverStrategy max="20" />
+		</RollingFile>
+
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+
+	</Appenders>
+
+
+	<Loggers>
+
+		<Logger name="com.segemai" level="debug" additivity="false">
+			<AppenderRef ref="application_log" />
+		</Logger>
+		<Logger name="com.golaw" level="debug" additivity="false">
+			<AppenderRef ref="application_log" />
+		</Logger>
+		
+
+		<Logger name="org.apache" level="warn" additivity="false">
+			<AppenderRef ref="application_log" />
+		</Logger>
+		<Logger name="org.springframework" level="warn" additivity="false">
+			<AppenderRef ref="application_log" />
+		</Logger>
+		<Logger name="org" level="warn" additivity="false">
+			<AppenderRef ref="application_log" />
+		</Logger>
+
+		<Root level="info">
+			<AppenderRef ref="application_log" />
+		</Root>
+
+	</Loggers>
+</Configuration>

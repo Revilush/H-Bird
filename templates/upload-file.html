@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Please upload the documents here:</title>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='style.css')}}"
+		/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="childContainer">
+				<div class="childkachild">
+					<div class="onPepper">
+						<img src="{{ url_for('static', filename='pepper-logo.svg')}}" />
+						<h1>H Bird</h1>
+					</div>
+					<!-- <div id="uploaderComp">
+						<form
+							id="myForm"
+							action="/upload_file"
+							method="POST"
+							enctype="multipart/form-data"
+						>
+							<div>
+								Select for Private access:
+								<br />
+								<input type="checkbox" value="true" name="isPrivate" />Private
+							</div>
+							<input type="file" class="chsfile" name="file_name" multiple />
+							<br />
+							<br />
+							<button
+								class="btn"
+								type="submit"
+								name="Submit"
+								onclick="loading(true);submitForm(event);"
+							>
+								Submit
+							</button>
+						</form>
+						<p id="result"></p>
+
+						<div class="card">
+							<h2>
+								<b>Following files are uploaded: {% for fname in flist %}</b>
+							</h2>
+							<h3>{{fname}}</h3>
+							{% endfor %}
+							<ul id="fileList"></ul>
+						</div>
+					</div> -->
+					<div id="uploaderComp">
+						<form
+							id="myForm"
+							action="/upload_file"
+							method="POST"
+							enctype="multipart/form-data"
+						>
+							<div class="form-group">
+								<div class="form-group-top">
+									<label for="isPrivate">Make document Private:</label>
+									<input
+										type="checkbox"
+										value="true"
+										name="isPrivate"
+										id="isPrivate"
+									/>
+								</div>
+								<div class="form-group-bottom">
+									<label for="file_name"></label>
+									<input
+										type="file"
+										class="chsfile"
+										name="file_name"
+										id="file_name"
+										multiple
+									/>
+									<button
+										class="btn"
+										type="submit"
+										name="Submit"
+										onclick="loading(true);submitForm(event);"
+									>
+										Submit
+									</button>
+								</div>
+							</div>
+						</form>
+						<p id="result"></p>
+						<div class="card">
+							<h2>
+								<b>Following files are uploaded: {% for fname in flist %}</b>
+							</h2>
+							<h3>{{fname}}</h3>
+							{% endfor %}
+							<ul id="fileList"></ul>
+						</div>
+					</div>
+				</div>
+				<div id="loading_data">
+					<img
+						src="{{ url_for('static', filename='loading.gif')}}"
+						id="loading"
+						width="200px"
+					/>
+					<p class="uploadingTxt">Uploading your files...</p>
+				</div>
+			</div>
+		</div>
+		<script>
+			var file_data = '{{ flist }}';
+			console.log('file_data', file_data);
+			if (file_data) {
+				loading(false);
+			}
+			var myForm = document.getElementById('myForm');
+			var result = document.getElementById('result');
+			function loading(isLoading) {
+				console.log(isLoading);
+				if (isLoading) {
+					document.getElementById('loading_data').style.display = 'block';
+					document.getElementById('uploaderComp').style.display = 'none';
+				} else {
+					document.getElementById('loading_data').style.display = 'none';
+					document.getElementById('uploaderComp').style.display = 'flex';
+				}
+				// event.preventDefault();
+				console.log('submited');
+				// // myForm.submit();
+				// result.innerHTML =
+				//   '<b>The button is pressed and form is submitted.</b>';
+			}
+		</script>
+
+		<br />
+	</body>
+</html>
+
+<!-- a_folder=
+  b_folder=
+    b.txt
+  a.txt
+  b.docs
+  c.zip -->

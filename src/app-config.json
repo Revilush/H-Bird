@@ -1,0 +1,449 @@
+{
+	"common-config": {
+		"show-debug-info-on-ui": true,
+		"enable-auditing_write-to-files": true,
+		"folder-for-audit-files": "e:/getContracts/legal_search_audit",
+		"comment_apply-synonyms": "apply synonyms to re-consolidate final candidate results",
+		"apply-synonyms": false,
+		"comment_conform-final-results-2-query": "apply new RL algo to final results-to-be-returned to make them fit to the user query - to get minimum diffs",
+		"conform-final-results-2-query": false,
+		"enable-HL1": false,
+		"enable-HL2": true,
+		"enable-RL": true,
+		"search-config": {
+			"search-against-field": "hTxt",
+			"homogenize-query-text": true,
+			"wildcard-query-words": false,
+			"comment_word-count-field-name": "could be either hCnt or  ",
+			"word-count-field-name": "wCnt",
+			"comment_min-Q-hTxt-count-to-apply-word-count-range-filter": "otherwise no wordCnt-filter",
+			"min-Q-hTxt-count-to-apply-word-count-range-filter": 7,
+			"comment_wordCnt-filter-range": "applies to either wCnt or hCnt based on filter above",
+			"wordCnt-filter-range": [
+				0.5,
+				2.2
+			],
+			
+			"broadening-config":{
+				"wordCnt-filter-range":[0.5, 3.5]
+				, "mm":"65%"
+			},
+			
+			
+			"comment__default-FQs": "Default FQs to be applied to solr query, unless overridden by user",
+			"default-FQs": {
+				"within-last-years": 10
+			},
+			"raw-query-params": {
+				"defType": "edismax",
+				"mm": "70%",
+				"sort": "score desc",
+				
+				"expand":"true",
+				"expand.rows":"0",
+				"rows": 3000,
+				"fl": "id,txt,wCnt,typ,hTxt,score,def,exh,sec,hashTxtId,hashHtxtId,edgarLink"
+			},
+			"ready-fqs":[
+				"{!collapse field=hashTxtId}"
+			],
+			
+			"min-wcnt-for-clause-search": 25,
+			"doc0-search_raw-query-params": {
+				"rows": 5000
+			},
+			"doc0-search_default-FQs": [
+				"openingParagraph:(\"dated as of between\"~7 \"dated as of among\"~7)"
+			]
+			
+		},
+		"search-filter-config": {
+			"similarity-config": {
+				"apply-similarity": false,
+				"min-similarity-score": 70
+			},
+			"comment__cut-off-percent-score-againt-top-solr-score": "30 means if score=5 it will cutoff at 1.5",
+			"cut-off-percent-score-againt-top-solr-score": 10,
+			"comment__discard-groups-having-doc-counts-percent-below": "stub result groups whenever the group percent is below 0.5% - don�??�?¯�??�?¿�??�?½t display them",
+			"discard-groups-having-doc-counts-percent-below": 0.0005,
+			"factor-2-pick-results-b4-applying-sim": 1.5,
+			"top-txtcnt-results-always-picked-regardless-last-minute-filter": 3,
+			"comment__final-sort-by": "one of  txtCnt/simScore/diffCnt:  literal-text-count / similarity-score / diff-count against query.",
+			"final-sort-by": "txtCnt",
+			"final-results-count": 15
+		}
+	},
+	
+	"UI-config": {
+		"show-debug-info-on-ui": false,
+		"conform-final-results-2-query": true,
+		"search-filter-config": {
+			
+		}
+	},
+	"comment": "UI- and API-config trump global config above. This allows for custom settings. API can now be different than search.",
+	"API-config": {
+		"conform-final-results-2-query": true,
+		"search-filter-config": {
+			"final-results-count": 15,
+			"similarity-config": {
+				"apply-similarity": false,
+				"min-similarity-score": 70
+			}
+		},
+		"search-config": {
+			"raw-query-params": {
+				"mm": "70%"
+			}
+		}
+	},
+	
+	"solr-config": {
+		"default-contract-type": "Indentures",
+		"default-core-config": {
+			"base-server-url": "http://34.123.194.69:8984/solr/",
+			"core-name": "contract_type"
+		},
+		"contract-type-2-core-config": {
+	"Second Lien Credit Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Pledge Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Settlement Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Loan Modification Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Deposit Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Share Exhange Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Transition Services Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Letters of Credit": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Escrow Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Guaranty Standalone Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Confidentiality Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Mortgage Loan Purchase Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"First Lien Credit Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Revolving Credit Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Credit And Guaranty Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Consulting Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Note Warrant Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Stock Purchase Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Nondisclosure Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Voting Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Loan And Security Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Unsecured Credit Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Receivables Indentures": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Equity Distribution Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Contribution Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Fund Participation Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Convertible Loan Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Guaranty All Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Investment Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Underwriting Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Intercreditor Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Custody Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Merger Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Secured Credit Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Subscription Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Collateral Security Pledge Intercreditor Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Collateral And Security Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Term Loan Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Environmental Indemnity Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Indentures": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Day Credit Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Asset Representations Review Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Tech Related Licenses": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Bond Exhange Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Sales And Servicing Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Loan Servicing Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Trademark Licenses": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Placement Agency Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"RMBS Pooling and Servicing Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Technology Licenses": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Standstill And Forbearance Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Registration Rights Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Loan Participation Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Fund Accounting And Recordkeeping Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Warrant Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Asset Purchase Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Transfer Agent Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Plan of Reorg Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Common Stock Warrant Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Securities Lending Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Fund Administration Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Investor Rights Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Lease Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	},
+	"Fund Distribution Agreements": {
+		"base-server-url": "http://34.123.194.69:8984/solr/",
+		"core-name": "contract_type"
+	}			
+		},
+		"all-cores-in-use":[
+			{
+				"base-server-url": "http://34.123.194.69:8984/solr/",
+				"core-names": ["others_1","others_2","credits","underwriting","indentures"]
+			}			
+		],
+		"client-config":{ 
+			"base-server-url":"http://34.123.194.69:8984/solr/"
+			,"core-name":"coreClientDocuments"
+		}
+		,
+		"term-library-config":{
+			"base-server-url":"http://34.123.194.69:8984/solr/"
+			,"core-name":"coreTermLibrary"
+		}
+		,
+		"admin-config":{
+			"base-server-url":"http://34.123.194.69:8984/solr/"
+			,"core-name":"coreAdmin"
+		}
+	},
+	
+	"ml-config": {
+		"base-server-url": "http://127.0.0.1:8000",
+		"USE-similarity-endpoint": "/api/use/similarity/",
+		"find-synonym-endPoint": "/api/synonyms/"
+	},
+	"query-builder-config":{
+		"template-folder":"/home/rsa-key-20210127/legal_search_app_data/",
+		"reports-folder":"/home/rsa-key-20210127/legal_search_app_data/",
+		"term-library-folder":"/home/rsa-key-20210127/legal_search_app_data/",
+		"legal-pack-query-folder":"/home/rsa-key-20210127/legal_search_app_data/",
+		"htxt-synonym-file":"/home/rsa-key-20210127/legal_search_app_data/hTxtSynonyms.json"
+		
+		,"default-values":{
+			"core":["Indentures"]
+			,"contractType":["Indentures"]
+			
+			,"wCntRangeTimes":[0.5,2.5]
+			,"wCntField":"wCnt"
+			
+			,"txtType":[3]
+		}
+
+		,"raw-solr-query-params":{
+			"defType":"edismax"
+			
+			,"sort":"score desc"
+			
+			,"facet":"true"
+			,"facet.field":"hashTxtId"
+			,"facet.mincount":"1"
+			,"facet.limit":"10000"
+			
+			,"group":"true"
+			,"group.field":"hashTxtId"
+			
+			,"rows":25000
+		}
+		
+		,"doc0-search-raw-params":{
+			"rows":50000
+			,"fl":"kId,cik,edgarLink,openingParagraph,contractNameAlgo"
+		}
+		
+		,"similarity-range-settings":{
+			"high":{
+				"wCntRangeTimes":[0.5, 2]
+				,"mm":"80%"
+			}
+			,"medium":{
+				"wCntRangeTimes":[0.3, 3]
+				,"mm":"65%"
+			}
+			,"low":{
+				"wCntRangeTimes":[0.2, 4.2]
+				,"mm":"55%"
+			}
+			,"super_low":{
+				"wCntRangeTimes":[0.15, 5]
+				,"mm":"25%"
+			}
+		}
+	}
+}
