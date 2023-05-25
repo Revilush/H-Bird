@@ -2,6 +2,10 @@
 
 This repo has 'flask file code' + 'parser code' for Humming bird
 
+Foldername: desciprtion
+SQL: for generating *SQL container*
+All other code is for flask container
+
 # CODESPACE:
 1. Elastic: 
 2. Flask: use this repo.
