@@ -1,6 +1,6 @@
 # H-Bird
 
-This has 'flask uploading file code' + 'parser code' for Humming bird
+This repo has 'flask file code' + 'parser code' for Humming bird
 
 # CODESPACE:
 1. Elastic: 
